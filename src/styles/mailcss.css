@@ -1,0 +1,66 @@
+header{
+    text-align: center;
+    font-size: 20px;
+}
+header h5{
+    
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}
+
+#social{
+    position:fixed;
+    bottom: 50px;
+    right:0px;
+}
+
+
+
+table tr th{
+    /* text-align:center; */
+    height: 20px;
+}
+
+.logo{
+    /* position: relative; */
+    height: 70px;
+
+}
+
+.leftlogo{
+    position:absolute;
+    top:40px;
+    right:0px;
+    z-index: -2;
+}
+
+.rightlogo{
+    position:absolute;
+    top:40px;
+    left:0px;
+    z-index: -20;
+}
+
+.indent{
+    text-indent: 5px;
+    text-align: left;
+}
+
+
+.textIndent{
+    text-align: left;
+    text-indent: 10px;
+}
+
+@media prirnt{
+    main{
+        display: none;
+    }
+    body{
+        background-image:url(dilli.jpeg);
+        background-repeat: no-repeat;
+        background-position: 350px 200px;
+        background-size:400px 400px;
+        
+    }
+}

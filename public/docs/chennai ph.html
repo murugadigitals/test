@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadapa RMS Bags</title>
+    <link rel="stylesheet" href="../../src/styles/mailcss.css">
+
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        table {
+            margin: auto;
+            border-collapse: separate;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        #tableContainter,
+        footer,
+        #leftTxt,
+        #rightTxt,
+        .logo {
+            display: none;
+        }
+
+
+
+        @media print {
+            #btnContainer {
+                display: none;
+            }
+
+            #tableContainter,
+            footer,
+            #leftTxt,
+            #rightTxt,
+            .logo {
+                display: block;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body onload="bodyload()">
+
+    <main>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+                <div id="btnContainer" class="col-9">
+
+                    <button class="btn btn-danger" onclick="firstLineBags()">First Line</button>
+                    <button class="btn btn-danger" onclick="secondLineBags()">Second Line</button>
+                    <button class="btn btn-danger" onclick="chennaiCentralTMO()">Chennai Central TMO</button>
+                    <button class="btn btn-danger" onclick="chennaiPH()">Chennai PH</button>
+                    <button class="btn btn-danger" onclick="mlNellore()">Nellore ICH</button>
+                    <button class="btn btn-danger" onclick="mlKadapa()">Kadapa ICH</button>
+                    <button class="btn btn-danger" onclick="ipvsDown()">IPVS Down</button>
+                    <button class="btn btn-success" onclick="mlIdcTirupati()">Excel Export</button>
+
+                </div>
+                <div class="col-3 pb-5" id="tableContainter">
+                    <header id="container" class="py-5">
+                        <h4 style="font-size: 24px;"></h4>
+                    </header>
+                    <table cellpadding="2" cellspacing="0" width="620">
+                        <thead>
+                            <tr style="background-color: yellow;" class="fw-bold">
+                                <th style="border-top-left-radius: 5px;padding: 5px;" width="5">S.NO</th>
+                                <th>Bag Number</th>
+                                <th>Bag Type</th>
+                                <th>Bag Closed From</th>
+                                <th style="border-top-right-radius: 5px;">Bag Closed To</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fw-bold">
+
+                        </tbody>
+                        <tfoot>
+                            <td style="border-bottom-left-radius: 5px;">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="border-bottom-right-radius: 5px;">&nbsp;</td>
+                        </tfoot>
+                    </table>
+                    <div align="left" class="d-flex justify-content-between">
+                        <div>
+                            <img src=" ../../public/images/sing.png" width="160" height="80" alt=""
+                                style="margin-left: 30px;">
+                            <h4>MailList Prepared By <br>( 10163797 )</h4>
+                        </div>
+                        <div id="bagCount">
+                            <h4 class="text-decoration-underline mt-4 fs-2">Bag Details Summary</h4>
+                            <div class="fs-4 d-flex justify-content-evenly"><span>Speed : </span><span
+                                    id="speed"></span>
+                            </div>
+                            <div class="fs-4 d-flex justify-content-evenly"><span>Parcel : </span><span
+                                    id="parcel"></span>
+                            </div>
+                            <div class="fs-4 d-flex justify-content-evenly"><span>Total : </span><span
+                                    id="total1"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo">
+                    <div class="leftlogo">
+                        <img src="../images/logo.png" width="140px" height="70px">
+                    </div>
+                    <div class="rightlogo">
+                        <img src="../images/ashok.png" width="100px" height="70px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-between">
+        <div id="leftTxt"></div>
+        <div id="rightTxt"></div>
+    </footer>
+
+    <script src="../../src/scripts/fetchjs.js"></script>
+
+</body>
+
+</html>

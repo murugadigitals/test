@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+            /* outline: none; */
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            /* margin-top: 20px; */
+            margin: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="searchKey" placeholder="Enter Your Office Name">
+        <button onclick="Search()">Search</button>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Bag Number</th>
+                    <th>Bag Type</th>
+                    <th>Bag Closed From</th>
+                    <th>Bag Closed To</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function Search() {
+            const searchItem = document.getElementById("searchKey").value;
+            fetch('http://localhost:3000/api/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ searchItem: searchItem })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    data.forEach((element, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                                <td>${index + 1}</td>
+                                <td>${element['Bag Number']}</td>
+                                <td>${element['Bag Type']}</td>
+                                <td>${element['From Office Name']}</td>
+                                <td>${element['To Office Name']}</td>
+                            `;
+                        document.getElementById('tableBody').appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            // window.location.reload();
+        }
+
+    </script>
+</body>
+
+</html>
