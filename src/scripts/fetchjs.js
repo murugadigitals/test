@@ -1,4 +1,5 @@
 var userName = document.getElementById("txtUser").value;
+const puppeteer = require("puppeteer");
 function bodyload() {
   var today = new Date();
   let months = [
@@ -24,16 +25,18 @@ function bodyload() {
             
             <br>`;
   document.querySelector("h4").style.textAlign = "center";
+  document.querySelector("h4").style.fontSize = "22px";
 
   document.getElementById("leftTxt").innerHTML =
     `<h4 style="font-size: 22px;"><span style="text-decoration:underline">Note: All Bags were dealt in IT 2.0 Olny.</span> <br>Report Printed On : ${datetime}</h4>`;
 
-  document.getElementById("rightTxt").innerHTML = `<h4 style="font-size: 22px;">
-                <span class="bi bi-whatsapp">&nbsp;+91 7396128940</span><br>
-                <span class="bi bi-telephone">&nbsp;+91&nbsp; 8121963271</span><br>
-                <span class="bi bi-envelope-at"> msharipdtr@gmail.com</span>
-                
-                <h4>`;
+  document.getElementById("rightTxt").innerHTML = `
+                <h4 style="font-size: 22px;">
+                  <span class="bi bi-whatsapp">&nbsp;+91 7396128940</span><br>
+                  <span class="bi bi-telephone">&nbsp;+91&nbsp; 8121963271</span><br>
+                  <span class="bi bi-envelope-at"> msharipdtr@gmail.com</span>
+                </h4>
+                `;
   document.getElementById("rightTxt").style.textAlign = "right";
 }
 
@@ -58,9 +61,9 @@ async function firstLineBags() {
     tr.style.textAlign = "center";
     tr.innerHTML = `
                             <td>${index + 1}</td>
-                            <td>${emp["Bag Number"]}</td >
-                            <td id="PL">${emp["Bag Type"]}</td>
-                            <td style="width:150px">${emp["From Office Name"]}</td>
+                            <td style="width:140px">${emp["Bag Number"]}</td >
+                            <td id="PL" style="width:60px">${emp["Bag Type"]}</td>
+                            <td style="width:120px">${emp["From Office Name"]}</td>
                             <td style ="width:230px;text-align:start;text-indent:10px"> ${emp["To Office Name"]}</td >
                             `;
     document.querySelector("tbody").appendChild(tr);

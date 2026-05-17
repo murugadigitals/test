@@ -86,18 +86,27 @@ app.get("/kadapa", (req, res) => {
 
 app.get("/idctirupati", (req, res) => {
   db.query(
-    // "SELECT * FROM speed where `To Office Name` in ('Akkurthi S.O','AVILALA SO','Bhakarapet S.O','Buchinaidu Kandriga S.O','Chandragiri H.O','Chinnagottigallu S.O','Damalacheruvu S.O','Ekambarakuppam S.O','Gyarampalle kothapalle S.O','Kalakada S.O','Kallur S.O Chittoor','Karvetinagar S.O','Kattakindavenkatapuram S.O','Kovanur S.O','Mangalam S.O','Mangalampet S.O','Nagalapuram S.O Chittoor','Nagari S.O','Narasingapuram S.O Chittoor','Narayanavaram S.O','Nindra S.O','Pachikapallam S.O','Pakala S.O','Pallam S.O','Panagal S.O','Pannur S.O Chittoor','Papanaidupet S.O','Peddakannali S.O','Perumallapalle S.O','Piler S.O','Pissatur S.O','Puttur S.O','Renigunta S.O','Rompicherla S.O Chittoor','Satyavedu S.O','Settipalli S.O','Sri Bommarajapuram S.O','Sricity S.E.Z SO','Srikalahasti H.O','Thondamanadu S.O','Tiruchanoor S.O','Tirumala S.O Chittoor','Vadamalpet S.O','Varadaiahpalem S.O','Vepagunta S.O Chittoor','Yerpedu S.O') order by `To Office Name`",
-    "SELECT * FROM speed where `To Office Name` in('Hubballi Dharwad NSH','Ananthapur ICH','Kurnool ICH','Pune NSH') order by `Bag Number`",
-    // "SELECT * FROM parcel",
+    "SELECT * FROM speed where `To Office Name` in('IDC TIRUPATI') order by `To Office Name`",
     // "call firstsecond()",
     (err, results) => {
       if (err) {
         res.status(500).send(err);
       } else {
-        res.json(results);
+        // res.json(results);
+        res.send(results);
       }
     },
   );
+});
+
+app.get("/excelexport", (req, res) => {
+  db.query("call excelexport()", (err, results) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.json(results);
+    }
+  });
 });
 
 app.listen(3000, () => {

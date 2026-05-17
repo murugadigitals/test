@@ -13,6 +13,14 @@
         table {
             margin: auto;
             border-collapse: separate;
+            width: 100%;
+        }
+
+        button {
+            width: 120px;
+            margin: 10px;
+            padding: 10px !important;
+            font-weight: bold;
         }
 
         th,
@@ -26,58 +34,87 @@
         }
 
         #tableContainter,
-        footer,
-        #leftTxt,
-        #rightTxt,
         .logo {
             display: none;
         }
 
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            min-height: 100vh;
+            align-items: flex-end;
+        }
+
+        main {
+            flex: 1;
+        }
 
         @media print {
+
             #btnContainer {
                 display: none;
             }
 
+
+            /* Ensure footer goes to next page if needed */
+            footer {
+                page-break-before: auto;
+            }
+
+            /* Avoid breaking inside table rows */
+            tr {
+                page-break-inside: avoid;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
             #tableContainter,
-            footer,
             #leftTxt,
             #rightTxt,
             .logo {
                 display: block;
             }
+        }
 
+        #tableContainter {
+            padding-bottom: 80px;
         }
     </style>
 
 </head>
 
-<body onload="bodyload()">
+<body onload="bodyload()" style="position: relative;">
 
     <main>
         <div class="container-fluid">
-            <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="row d-flex justify-content-center align-items-center" style="min-height: 100vh;">
 
                 <div id="btnContainer" class="col-9">
 
                     <button class="btn btn-danger" onclick="firstLineBags()">First Line</button>
                     <button class="btn btn-danger" onclick="secondLineBags()">Second Line</button>
-                    <button class="btn btn-danger" onclick="chennaiCentralTMO()">Chennai Central TMO</button>
-                    <button class="btn btn-danger" onclick="chennaiPH()">Chennai PH</button>
                     <button class="btn btn-danger" onclick="mlNellore()">Nellore ICH</button>
                     <button class="btn btn-danger" onclick="mlKadapa()">Kadapa ICH</button>
-                    <button class="btn btn-danger" onclick="ipvsDown()">IPVS Down</button>
-                    <button class="btn btn-success" onclick="mlIdcTirupati()">Excel Export</button>
+                    <button class="btn btn-danger" onclick="mlIdcTirupati()">Tirupati IDC</button>
+                    <button class="btn btn-success" onclick="excelExport()">Excel Export</button>
 
                 </div>
                 <div class="col-3 pb-5" id="tableContainter">
                     <header id="container" class="py-5">
                         <h4 style="font-size: 24px;"></h4>
                     </header>
-                    <table cellpadding="2" cellspacing="0" width="620">
+                    <table cellpadding="3" cellspacing="0" width="100%">
                         <thead>
-                            <tr style="background-color: yellow;" class="fw-bold">
+                            <tr style="background-color: yellow;height: 50px;" class="fw-bold">
                                 <th style="border-top-left-radius: 5px;padding: 5px;" width="5">S.NO</th>
                                 <th>Bag Number</th>
                                 <th>Bag Type</th>
@@ -98,20 +135,17 @@
                     </table>
                     <div align="left" class="d-flex justify-content-between">
                         <div>
-                            <img src=" ../../public/images/sing.png" width="160" height="80" alt=""
+                            <img src="../../public/images/sing.png" width="160" height="80" alt=""
                                 style="margin-left: 30px;">
                             <h4>MailList Prepared By <br>( 10163797 )</h4>
                         </div>
                         <div id="bagCount">
-                            <h4 class="text-decoration-underline mt-4 fs-2">Bag Details Summary</h4>
-                            <div class="fs-4 d-flex justify-content-evenly"><span>Speed : </span><span
-                                    id="speed"></span>
+                            <h4 class="text-decoration-underline mt-4 fs-2">Bags Count</h4>
+                            <div class="fs-4 d-flex justify-content-end"><span>Speed : </span><span id="speed"></span>
                             </div>
-                            <div class="fs-4 d-flex justify-content-evenly"><span>Parcel : </span><span
-                                    id="parcel"></span>
+                            <div class="fs-4 d-flex justify-content-end"><span>Parcel : </span><span id="parcel"></span>
                             </div>
-                            <div class="fs-4 d-flex justify-content-evenly"><span>Total : </span><span
-                                    id="total1"></span>
+                            <div class="fs-4 d-flex justify-content-end"><span>Total : </span><span id="total1"></span>
                             </div>
 
                         </div>
@@ -129,7 +163,7 @@
             </div>
         </div>
     </main>
-    <footer class="d-flex justify-content-between">
+    <footer class="d-flex justify-content-between" style="margin-top: 450px;">
         <div id="leftTxt"></div>
         <div id="rightTxt"></div>
     </footer>
