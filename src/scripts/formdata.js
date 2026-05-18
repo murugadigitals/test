@@ -33,8 +33,8 @@ app.post("/adduser", (req, res) => {
   });
 });
 
-app.get("/users", (req, res) => {
-  const sql = "SELECT * FROM users";
+app.get("/firstline", (req, res) => {
+  const sql = "SELECT * FROM speed";
 
   db.query(sql, (err, result) => {
     if (err) {

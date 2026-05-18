@@ -36,15 +36,48 @@ async function fetchUsers() {
 }
 
 async function fetchUsers1() {
-  const res = await fetch("http://localhost:3000/users");
+  const target = [
+    "Chittoor H.O",
+    "IDC TIRUPATI",
+    "Madanapalle H.O",
+    "Nellore ICH",
+    "Cuddapah ICH",
+  ];
+  const username = document.getElementById("txtUser").value;
+  const res = await fetch("http://localhost:3000/firstline");
   // console.log(res);
   const data = await res.json();
   console.log(data);
 
-  data.unshift({
-    SNO: 25,
-    Name: "P Kavya",
-    Email: "pkavya@gmail.com",
+  // data.unshift({
+  //   SNO: 25,
+  //   Name: "P Kavya",
+  //   Email: "pkavya@gmail.com",
+  // });
+  // console.log(data);
+
+  // const result = data.map((user) => {
+  //   return user.Email.toUpperCase();
+  // });
+  // // document.getElementById("status").textContent =
+  // // "User Found: " + result[0].Name;
+  // console.log(result);
+
+  // const result = data.filter((value) => {
+  //   return value["To Office Name"] === username;
+  // });
+  // console.log(result);
+
+  target.forEach((office) => {
+    const exists = data.some((item) => {
+      return item["To Office Name"] === office;
+    });
+    console.log(exists);
+
+    if (exists) {
+      console.log(office + " is present");
+    } else {
+      alert(office + " is not present in the data.");
+    }
   });
-  console.log(data);
 }
