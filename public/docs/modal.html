@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <DIV class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <button class="btn btn-danger w-25 fs-4" data-bs-toggle="modal" data-bs-target="#target">LogIn Here
+        </button>
+    </DIV>
+    <div class="container">
+        <div class="modal fade" id="target" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-1"><span class="bi bi-person-fill"> User Login</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div>
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" id="username" class="form-control">
+                            </div>
+                            <div>
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password" class="form-control">
+                            </div>
+                            <div id="status"></div><br>
+                            <button type="button" class="btn btn-danger fs-6" onclick="testFunction()">LogIn</button>
+                            <button type="reset" class="btn btn-primary fs-6" onclick="resetClick()">Reset</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                            <p class="fs-5">Don't have an account? <a href="#">Sign Up</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // document.getElementById("status").style.color = "red";
+        function testFunction() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username === "admin" && password === "admin") {
+                document.getElementById("status").style.color = "green";
+                document.getElementById("status").innerHTML = "Login Successful";
+                // location.href = "https://www.google.com";
+                location.href = "./chennai ph.html";
+            } else {
+                document.getElementById("status").style.color = "red";
+                document.getElementById("status").innerHTML = "Invalid username or password";
+            }
+        }
+        function resetClick() {
+            document.getElementById("status").innerHTML = "";
+        }
+    </script>
+
+</body>
+
+</html>
