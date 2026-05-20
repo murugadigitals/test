@@ -36,6 +36,8 @@ app.get("/users", (req, res) => {
 
 app.get("/allclosings", (req, res) => {
   const sql = "SELECT * FROM speed";
+  // const sql =
+  // "SELECT * FROM speed WHERE `To Office Name`in('Cuddapah ICH','Nellore ICH')";
   db.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching data:", err);

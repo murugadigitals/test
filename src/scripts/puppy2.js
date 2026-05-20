@@ -13,7 +13,7 @@ const db = mysql.createConnection({
 
 app.get("/nellore", async (req, res) => {
   db.query(
-    "SELECT * FROM speed where `To Office Name` in ('Nellore ICH','Cuddapah ICH') order by `To Office Name` asc",
+    "SELECT * FROM speed where `To Office Name` in ('Nellore ICH') order by `To Office Name` asc",
     // "SELECT * FROM speed where `To Office Name`='Nellore ICH'",
     async (err, results) => {
       if (err) {
@@ -30,7 +30,7 @@ app.get("/nellore", async (req, res) => {
           <td>${row["Bag Number"]}</td>
           <td>${row["Bag Type"]}</td>
           <td>${row["From Office Name"]}</td>
-          <td style="text-align:start;text-indent:10px">${row["To Office Name"]}</td>
+          <td style="text-align:center;text-indent:10px">${row["To Office Name"]}</td>
         </tr>
       `;
       });
@@ -46,14 +46,13 @@ app.get("/nellore", async (req, res) => {
         </style>
       </head>
       <body>
-        <h3 style="text-align:center;">RMS Mail Report</h3>
         <table style="border-collapse:separate;border-spacing:0px;">
-          <tr>
+          <tr style="background-color:#f2f2f2;">
             <th style="height:45px;border-top-left-radius:5px; width=20px;">S.NO</th>
             <th style="width:180px;">Bag Number</th>
             <th style="width:100px;">Type</th>
-            <th style="width:150px;">From</th>
-            <th style="border-top-right-radius:5px;width:270px;">To</th>
+            <th style="width:150px;">From Office</th>
+            <th style="border-top-right-radius:5px;width:270px;">To Office</th>
           </tr>
           ${rows}
           <tr>
@@ -81,8 +80,8 @@ app.get("/nellore", async (req, res) => {
         displayHeaderFooter: true,
 
         headerTemplate: `
-        <div>
-          <h1 style="text-align:center;font-size:20px;font-weight:bold;text-decoration:underline">RMS Mail Report</h1>
+        <div style="width:100%; font-size:10px; display:flex; justify-content:center; padding:0 20px;">
+          <h1 style="text-align:center;font-size:20px;font-weight:bold;line-height:22px;">Department of Posts::India<br>Tirupati TMO - 517501<br><span style="text-decoration:underline">MailList To : Nellore TMO      SET : 2B   Dated : 19 - 05 - 2026 </span></h1>
         </div>
       `,
 
@@ -94,7 +93,7 @@ app.get("/nellore", async (req, res) => {
       `,
 
         margin: {
-          top: "100px",
+          top: "120px",
           bottom: "120px",
           left: "20px",
           right: "20px",

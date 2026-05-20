@@ -1,0 +1,162 @@
+const express = require("express");
+
+const app1 = express();
+const app2 = express();
+
+app1.get("/", (req, res) => {
+
+    res.send("Server 1");
+
+});
+
+app2.get("/", (req, res) => {
+
+    res.send("Server 2");
+
+});
+
+app1.listen(3000, () => {
+
+    console.log("Server 1 running");
+
+});
+
+app2.listen(4000, () => {
+
+    console.log("Server 2 running");
+
+});
+
+
+
+app.listen(3000);
+app2.listen(3000);
+
+
+app.listen(3000);
+app2.listen(4000);
+
+Server 1 → localhost:3000
+Server 2 → localhost:4000
+Server 3 → localhost:5000
+
+
+Server1.js
+
+const express = require("express");
+
+const app = express();
+app.listen(3000, () => {
+   console.log("Server 1");
+});
+
+Server2.js:
+
+const express = require("express");
+const app = express();
+
+app.listen(4000, () => {
+   console.log("Server 2");
+});
+
+
+@echo off
+start cmd /k nodemon server1.js
+start cmd /k nodemon server2.js
+
+
+pm2 start server1.js
+pm2 start server2.js
+
+
+Difference Between /k and /c
+Command	Meaning
+/k	Run command and keep terminal open
+/c	Run command and close terminal
+Example /k
+cmd /k dir
+Result:
+✅ shows files
+✅ terminal remains open
+
+
+Example Without /k
+start cmd nodemon server.js
+
+
+Real Example
+
+@echo off
+start cmd /k nodemon api.js
+start cmd /k nodemon auth.js
+start msedge.exe http://localhost:3000
+
+This:
+✅ opens 2 terminals
+✅ runs 2 servers
+✅ opens browser automatically
+
+CMD Flow
+cmd
+ ├── /k → keep open
+ └── /c → close after execution
+
+
+@echo off
+start cmd /k nodemon api.js
+start cmd /k nodemon auth.js
+start msedge.exe http://localhost:3000
+
+
+
+
+Advanced Method Using PM2
+pm2 start api.js
+pm2 start auth.js
+pm2 start admin.js
+Then open browsers separately.
+
+Useful CMD Symbols
+Symbol	Meaning
+::	Comment
+^	Continue line
+/k	Keep terminal open
+timeout /t 5	Wait 5 seconds
+
+
+app.get("/kadapa", async (req, res) => {
+  const sql = `
+    SELECT * FROM speed
+    WHERE \`To Office Name\` = 'Cuddapah ICH'
+    ORDER BY \`To Office Name\` ASC
+  `;
+
+
+  let rows = "";
+
+      results.forEach((row, i) => {
+        rows += `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${row["Bag Number"]}</td>
+            <td>${row["Bag Type"]}</td>
+            <td>${row["From Office Name"]}</td>
+            <td>
+              ${row["To Office Name"]}
+            </td>
+          </tr>
+        `;
+      });
+const browser = await puppeteer.launch();
+const page = await browser.newPage();
+
+
+
+
+
+
+
+
+
+
+
