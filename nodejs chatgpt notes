@@ -147,14 +147,55 @@ app.get("/kadapa", async (req, res) => {
           </tr>
         `;
       });
+
+
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 
+SET:
+
+const missingOffices =
+    new Set();
+
+data.forEach((item) => {
+    if (
+        !first.includes(
+            item["To Office Name"]
+        )
+    ) {
+        missingOffices.add(
+            item["To Office Name"]
+        );
+    }
+});
+
+if (missingOffices.size > 0) {
+    alert(
+        [...missingOffices]
+        .map((office) => {
+            return `Office ${office} is not received`;
+        })
+        .join("\n")
+    );
+
+}
 
 
 
+ data.forEach((item) => {
+      if (!first.includes(item["To Office Name"])) {
+        alert(`Office ${item["To Office Name"]} is not received`);
+      }
+    });
 
-
+    targetArray.length = 0;
+    data.forEach((item) => {
+      // CHECK BAG NUMBER
+      if (!newArray.includes(item["Bag Number"])) {
+        targetArray.push(item);
+      }
+    });
+    console.log(targetArray);
 
 
 

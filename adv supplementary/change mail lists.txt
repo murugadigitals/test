@@ -1,0 +1,27 @@
+	Worksheets("hari").PageSetup.FirstPage.RightFooter.Text = "&18&U&BPage &P of Pages &N&U" & Chr(10) & "&18 + 91 73 96 12 89 40" & Chr(10) & "+ 91 81 21 96 32 71"
+  
+    Worksheets("hari").PageSetup.RightFooter = "&18&U&BPage &P of Pages &N&U" & Chr(10) & "&18 + 91 73 96 12 89 40" & Chr(10) & "+ 91 81 21 96 32 71"
+
+    Worksheets("hari").PageSetup.RightHeader = "&18&U&B Tirupati TMO | SET : 2B"
+    Worksheets("hari").PageSetup.LeftHeader = ""
+
+    Worksheets("hari").PageSetup.FirstPage.LeftFooter.Text = "&18&B&UNOTE : All Bags were dealt in IT 2.0 only &U" & Chr(10) & "&18Report Printed On : " & Now
+    Worksheets("hari").PageSetup.LeftFooter = "&18&U&BNOTE : All Bags were dealt in IT 2.0 only &U" & Chr(10) & "&18Report Printed On : " & Now
+    
+
+
+
+
+
+Worksheets("hari").PageSetup.FirstPage.CenterHeader.Text = "&18&BDepartment of Posts :: India" & Chr(10) & "Tirupati PH - 517501" & Chr(10) & "MailList To : DRDC Chittoor  SET : 2B  Dated : " & Date - 1 & Chr(10) & "( IPE - 2026)" & Chr(10) & "_______________________________________________________"
+
+    Worksheets("hari").PageSetup.FirstPage.RightFooter.Text = "&18&U&BPage &P of Pages &N&U" & Chr(10) & "&18 + 91 73 96 12 89 40" & Chr(10) & "+ 91 81 21 96 32 71"
+  
+    Worksheets("hari").PageSetup.RightFooter = "&18&U&BPage &P of Pages &N&U" & Chr(10) & "&18 + 91 73 96 12 89 40" & Chr(10) & "+ 91 81 21 96 32 71"
+
+    Worksheets("hari").PageSetup.RightHeader = "&18&U&B Tirupati TMO | SET : 2B"
+    Worksheets("hari").PageSetup.LeftHeader = ""
+
+    Worksheets("hari").PageSetup.FirstPage.LeftFooter.Text = "&18&B&UNOTE : All Bags were dealt in IT 2.0 only &U" & Chr(10) & "&18Report Printed On : " & Now
+    Worksheets("hari").PageSetup.LeftFooter = "&18&U&BNOTE : All Bags were dealt in IT 2.0 only &U" & Chr(10) & "&18Report Printed On : " & Now
+    

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadapa RMS Bags</title>
+    <link rel="stylesheet" href="../../../src/styles/mailcss.css">
+
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        table {
+            margin: auto;
+            border-collapse: separate;
+            width: 100%;
+        }
+
+        button {
+            width: 120px;
+            margin: 10px;
+            padding: 10px !important;
+            font-weight: bold;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        #tableContainter,
+        .logo {
+            display: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            min-height: 100vh;
+            align-items: flex-end;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        @media print {
+
+            #btnContainer {
+                display: none;
+            }
+
+
+            /* Ensure footer goes to next page if needed */
+            footer {
+                page-break-before: auto;
+            }
+
+            /* Avoid breaking inside table rows */
+            tr {
+                page-break-inside: avoid;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            #tableContainter,
+            #leftTxt,
+            #rightTxt,
+            .logo {
+                display: block;
+            }
+        }
+
+        #tableContainter {
+            padding-bottom: 80px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+
+                <div id="btnContainer" class="col-9">
+
+                    <input type="text" id="bagId" placeholder="Enter Bag Number"
+                        class="form-control w-auto d-inline-block">
+                    <button class="btn btn-danger" onclick="deleteBag()">Go</button>
+                    <br><br>
+                    <input type="text" id="serverbagId" placeholder="Enter Bag Number"
+                        class="form-control w-auto d-inline-block">
+                    <button class="btn btn-danger" onclick="addServerBag()">Go</button>
+
+
+                    <button class="btn btn-danger" onclick="allClosings()">Get Bags</button>
+                    <!-- <button class="btn btn-danger" onclick="secondLineBags()">Second Line</button>
+                    <button class="btn btn-danger" onclick="mlNellore()">Nellore ICH</button>
+                    <button class="btn btn-danger" onclick="mlKadapa()">Kadapa ICH</button>
+                    <button class="btn btn-danger" onclick="mlIdcTirupati()">Tirupati IDC</button>
+                    <button class="btn btn-success" onclick="excelExport()">Excel Export</button> -->
+
+
+                </div>
+                <div class="col-3 pb-5" id="tableContainter">
+                    <header id="container" class="py-5">
+                        <h4 style="font-size: 24px;"></h4>
+                    </header>
+                    <table cellpadding="3" cellspacing="0" width="100%">
+                        <thead>
+                            <tr style="background-color: yellow;height: 50px;" class="fw-bold">
+                                <th style="border-top-left-radius: 5px;padding: 5px;" width="5">S.NO</th>
+                                <th>Bag Number</th>
+                                <th>Bag Type</th>
+                                <th>Bag Closed From</th>
+                                <th style="border-top-right-radius: 5px;">Bag Closed To</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fw-bold">
+
+                        </tbody>
+                        <tfoot>
+                            <td style="border-bottom-left-radius: 5px;">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="border-bottom-right-radius: 5px;">&nbsp;</td>
+                        </tfoot>
+                    </table>
+                    <div align="left" class="d-flex justify-content-between">
+                        <div>
+                            <img src="../../../public/images/sing.png" width="160" height="80" alt=""
+                                style="margin-left: 30px;">
+                            <h4>MailList Prepared By <br>( 10163797 )</h4>
+                        </div>
+                        <div id="bagCount">
+                            <h4 class="text-decoration-underline mt-4 fs-2">Bags Count</h4>
+                            <div class="fs-4 d-flex justify-content-end"><span>Speed : </span><span id="speed"></span>
+                            </div>
+                            <div class="fs-4 d-flex justify-content-end"><span>Parcel : </span><span id="parcel"></span>
+                            </div>
+                            <div class="fs-4 d-flex justify-content-end"><span>Total : </span><span id="total1"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo">
+                    <div class="leftlogo">
+                        <img src="../../../public/images/logo.png" width="140px" height="70px">
+                    </div>
+                    <div class="rightlogo">
+                        <img src="../../../public/images/ashok.png" width="100px" height="70px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-between" style="margin-top: 450px;">
+        <div id="leftTxt"></div>
+        <div id="rightTxt"></div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
