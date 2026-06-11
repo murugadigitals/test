@@ -236,12 +236,20 @@ app.get("/kadapa", async (req, res) => {
         displayHeaderFooter: true,
 
         headerTemplate: `
+         <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        >
         <div style="width:100%; font-size:10px; display:flex; justify-content:center; padding:0 20px;">
           <h1 style="text-align:center;font-size:20px;font-weight:bold;line-height:22px;">Department of Posts::India<br>Tirupati TMO - 517501<br><span style="text-decoration:underline">MailList To : Nellore TMO      SET : 2B   Dated : 19 - 05 - 2026 </span></h1>
         </div>
       `,
 
         footerTemplate: `
+         <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        >
         <div style="width:100%; font-size:10px; display:flex; justify-content:space-between; padding:0 0px;line-height:1.2;">
           <div style="font-size:20px;font-weight:bold;margin-left:20px;"><span style="text-decoration:underline">All Bags Were dealt in IT 2.0 Only.</span><br>Report Printed On : <span class="date"></span></div>
           <div style="font-size:20px;font-weight:bold;margin-right:20px;text-align:end;"><span style="text-decoration:underline">Page <span class="pageNumber"></span> of Pages <span class="totalPages"></span></span><br>+91&nbsp;&nbsp; 7396128940<br>+91&nbsp;&nbsp; 8121963271</div>
@@ -275,5 +283,5 @@ app.get("/kadapa", async (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running on port 4000");
 });
