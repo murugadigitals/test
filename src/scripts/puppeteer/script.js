@@ -6,7 +6,7 @@ async function submitClick() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "puppeteer.pdf";
+  a.download = "nellore.pdf";
   document.body.appendChild(a);
   a.click();
   window.URL.revokeObjectURL(url);
@@ -20,7 +20,7 @@ async function kadapaClick() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "puppeteer.pdf";
+  a.download = "kadapa.pdf";
   document.body.appendChild(a);
   a.click();
   window.URL.revokeObjectURL(url);
